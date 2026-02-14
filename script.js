@@ -54,28 +54,23 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Navbar background fade on scroll
-let lastScroll = 0;
-const nav = document.querySelector('nav');
+// Navbar hide/show on scroll
+let lastScrollTop = 0;
+const navbar = document.querySelector('nav');
 
-// Add smooth transition to nav
-if (nav) {
-    nav.style.transition = 'all 0.3s ease';
-}
+window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-        nav.style.background = 'rgba(0, 50, 81, 0.98)';
-        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down: Fade out
+        navbar.classList.add('navbar-hidden');
     } else {
-        nav.style.background = 'rgba(0, 50, 81, 0.95)';
-        nav.style.boxShadow = 'none';
+        // Scrolling up: Fade in
+        navbar.classList.remove('navbar-hidden');
     }
 
-    lastScroll = currentScroll;
-});
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+}, false);
 
 // Add parallax effect to floating elements
 window.addEventListener('scroll', () => {
