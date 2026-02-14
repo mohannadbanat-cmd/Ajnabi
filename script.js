@@ -72,6 +72,7 @@ window.addEventListener('scroll', function () {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 }, false);
 
+
 // Add parallax effect to floating elements
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
