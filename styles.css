@@ -514,12 +514,23 @@ nav.navbar-hidden {
   text-align: center;
   font-weight: 600;
   transition: var(--transition-fast);
+  text-decoration: none;
+  color: var(--text-primary);
+  display: block;
+  cursor: pointer;
+}
+
+a.subject-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .subject-tag:hover {
   background: rgba(5, 179, 180, 0.2);
   border-color: rgba(5, 179, 180, 0.5);
   transform: scale(1.05);
+  color: var(--text-primary);
 }
 
 /* ===== STATS SECTION ===== */
