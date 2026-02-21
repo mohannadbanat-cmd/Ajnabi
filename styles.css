@@ -506,7 +506,11 @@ nav.navbar-hidden {
   margin-top: var(--spacing-lg);
 }
 
-.subject-tag {
+.subject-tag,
+a.subject-tag,
+a.subject-tag:visited,
+a.subject-tag:active,
+a.subject-tag:focus {
   background: rgba(5, 179, 180, 0.1);
   border: 2px solid rgba(5, 179, 180, 0.3);
   border-radius: var(--border-radius-sm);
@@ -514,23 +518,20 @@ nav.navbar-hidden {
   text-align: center;
   font-weight: 600;
   transition: var(--transition-fast);
-  text-decoration: none;
-  color: var(--text-primary);
-  display: block;
-  cursor: pointer;
-}
-
-a.subject-tag {
+  text-decoration: none !important;
+  color: var(--text-primary) !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
-.subject-tag:hover {
+a.subject-tag:hover {
   background: rgba(5, 179, 180, 0.2);
   border-color: rgba(5, 179, 180, 0.5);
   transform: scale(1.05);
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
 }
 
 /* ===== STATS SECTION ===== */
