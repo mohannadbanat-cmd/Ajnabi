@@ -718,13 +718,16 @@ footer {
     padding: var(--spacing-md);
     transform: translateY(-100%);
     opacity: 0;
+    pointer-events: none;
     transition: var(--transition-normal);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 999;
   }
 
   .nav-links.active {
     transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
   }
 
   .mobile-menu-toggle {
